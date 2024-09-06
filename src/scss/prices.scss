@@ -1,0 +1,146 @@
+@import "../scss/variables";
+
+.prices {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &__header {
+    display: block;
+    background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-top: 2px solid #d9fff5;
+
+  }
+
+  &__title {
+    display: flex;
+    width: 338px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $titlegrey;
+    margin: 20px;
+    font-weight: 300;
+    font-family: $medium;
+  }
+
+  .swiper {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    padding-bottom: 45px;
+    position: relative;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide{
+      display: flex;
+      width: 260px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background-color: $white;
+      border-radius: 5px;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-direction: column;
+      padding: 16px; 
+      box-sizing: border-box;
+    }
+
+    .swiper-pagination{
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+      margin-top: 20px;
+      bottom: 10px; 
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: $titlegrey;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      opacity: 1;
+      margin: 0 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $paginationpink;
+      width: 10px;
+      height: 10px;
+    }
+    
+  }
+
+  &__time {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: auto; 
+    position: relative;
+    font-family: $medium;
+  }
+
+
+  &__name {
+    margin-bottom: 10px; 
+    flex-grow: 1;
+    color: $titlegrey;
+    font-family: $medium;
+  }
+
+  &__text{
+    font-size: 14px;
+    color: $black;
+    margin: 0;
+    text-align: left;
+    font-family: $regular;
+  }
+
+  &__button {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background: url('/public/favicon/price/Rectangle.svg') no-repeat center; 
+    background-size: contain;
+    width: 100px; 
+    height: 32px; 
+    border: none;
+    color: $white;
+    font-family: $medium;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    border-radius: 16px; 
+    position: absolute; 
+    right: 0; 
+    bottom: 10px; 
+    padding-right: 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 10px; 
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-42deg); 
+      top: 13px;
+    }
+  }
+}

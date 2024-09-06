@@ -1,0 +1,161 @@
+@import "../scss/variables";
+
+.burger {
+  width: 270px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column; 
+  background-color: rgba(255, 255, 255, 1);
+  font-family: $regular;
+  min-height: 100vh;
+  z-index: 1;   
+  padding: 15px;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02); 
+  transform: translateX(-100%);  
+  transition: transform 0.3s ease;
+
+  @media (min-width: 1120px) {
+    transform: none; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 270px;
+  }
+
+  &.burger--open {
+    transform: translateX(0); 
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    align-items: center;
+
+    &--close {
+        padding-right: 8px;
+        display: block;
+
+        @media (min-width: 1120px) {
+          display: none; 
+        }
+    }
+
+    &--logo {
+        flex-grow: 1;  
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    flex-grow: 1;
+    gap: 5px;
+  }
+
+  &__tab {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    padding: 5px;
+    color: $black;
+    text-decoration: none;
+    padding-top: 20px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: '';
+      width: 4px;
+      height: 32px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: transparent; 
+      position: absolute;
+      left: -34px;
+      top: 50%;
+      transform: translateY(-25%);
+      transition: background-color 0.3s ease-in-out; 
+    }
+  
+    &:hover {
+      transform: translateX(24px); 
+    }
+  
+    &:hover::before {
+      background-color: #41F6D7; 
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2); 
+    }
+  
+    &:focus {
+      outline: none;
+      color: rgba(126, 126, 130, 1);
+    }
+  
+   
+    &:focus::before {
+      background-color: #41F6D7; 
+    }
+  }
+
+  &__feedback {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .feedback__icon-call{
+    padding-right: 16px;
+  }
+
+  .feedback__icon-chat{
+    padding-right: 16px;
+  }
+
+  &__mail {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-decoration: none;
+    color: $black;
+    padding-top: 16px;
+  }
+
+  &__num {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    color: $black;
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 12px;
+  }
+
+  &__button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    padding-top: 40px;
+  }
+
+  .feedback__button-lan{
+    padding-right: 7px;
+   }
+
+  button {
+    background-color: $body;
+    transition: 0.2s ease 0.1s;
+    outline: none;
+    border: none;
+
+    &:hover {
+      filter: grayscale(100%) opacity(70%);
+      transition-delay: 0s;  
+    }
+}
+}

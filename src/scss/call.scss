@@ -1,0 +1,129 @@
+.call {
+  position: fixed;
+  top: 20px;
+  right: -5px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.95); 
+  z-index: 1000;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+  
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+  
+  &__content {
+    position: relative;
+    padding: 20px;
+    width: 90%;
+    max-width: 350px;
+    background-color: $white;
+    z-index: 10;
+    text-align: center;
+  
+    @media (min-width: 768px) {
+      text-align: left; 
+    }
+  }
+  
+  &__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 30px;
+      left: -50px;
+    }
+  }
+  
+  &__title {
+    position: relative;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: $bold;
+      
+    &:hover::before {
+      border: 2px #1b1c21;
+      content: url("/public/favicon/highlight.svg");
+      position: absolute;
+      left: -15px;
+      top: -5px;
+    }
+  }
+  
+  &__input {
+    width: 100%;
+    max-width: 250px; 
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: $regular;
+  }
+  
+  &__text {
+    font-size: 14px;
+    color: $callgrey;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: $regular;
+  
+    a {
+      color: $paginationpink;
+      text-decoration: underline;
+      font-family: $regular;
+    }
+  }
+  
+  &__button {
+    background-color: $paginationpink;
+    color: $white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 130px; 
+    margin-left: auto; 
+    margin-top: 20px; 
+    position: relative;
+    font-family: $regular;
+  
+    &::after {
+      content: ''; 
+      position: absolute;
+      right: 12px; 
+      top: 15px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-43deg); 
+    }
+  }
+  
+  &--active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    }
+  }
+  

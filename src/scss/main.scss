@@ -1,0 +1,346 @@
+@import "../scss/variables";
+
+body{
+  background-color: $body;
+}
+
+.header {
+    padding: 10px 5px; 
+    background-color: $white;
+    border-bottom: #d9fff5 1px solid;
+
+    @media (min-width: 1120px) {
+      display: none; 
+    }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;  
+    
+    @media (min-width: 767px) {
+      margin: 18px 24px;
+    }
+  }
+
+  .nav__button {  
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    
+    @media (min-width: 767px) {
+      display: flex;
+      align-items: center;
+      gap: 8px; 
+    }
+  }
+
+  .menu-button {
+    background-color: $white; 
+    display: inline-block; 
+
+    @media (min-width: 767px) {
+      margin-right: 0; 
+    }
+  }
+
+  .menu-divider{ 
+    display: flex;
+    align-items: center;
+    width: 2px; 
+    min-height: 32px; 
+    background-color: rgba(234, 234, 234, 1);
+    margin: 0 5px; 
+
+    @media (min-width: 767px) {
+      width: 1px; 
+      min-height: 20px; 
+    }
+  }
+
+  &__item:nth-child(3) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media (min-width: 767px) {
+      display: flex;
+      align-items: center;
+      gap: 16px; 
+    }
+  }
+
+  &__item:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (min-width: 767px) {
+      display: flex;
+      align-items: center;
+      margin-right:auto;
+    }
+  }
+
+  &__item:nth-child(2) {
+    display: none;
+
+    @media (min-width: 767px){
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+      margin-left: auto; 
+    }
+  }
+
+  .header__item .nav__button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__divider {
+    width: 2px; 
+    min-height: 32px; 
+    background-color: rgba(234, 234, 234, 1);
+    margin: 0 5px;
+
+    @media (min-width: 767px) {
+        display: flex;
+        margin: 0 10px;
+    }
+  }
+
+  .nav__button .nav__button--repair,
+  .nav__button .nav__button--search{
+    display: inline-block;
+  }
+
+  button {
+    background-color: $white;
+    transition: 0.2s ease 0.1s;
+    border: none;
+    
+    &:hover {
+      filter: grayscale(100%) opacity(70%);
+      transition-delay: 0s;
+    }
+
+    @media (min-width: 1120px) {
+      background-color: $body;
+    }
+  }
+}
+
+.main{
+  background-color: $body;  
+
+  @media (min-width: 1120px)  {
+    margin-left: 300px; 
+    width: calc(100% - 300px);
+  }
+
+  &__header {
+    @media (min-width: 1120px)  {
+      display: flex;  
+      margin: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px; 
+    letter-spacing: -0.6px;
+    position: relative; 
+    padding: 24px 0 0 12px;
+    font-family: $medium;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      min-height: 40px;
+      position: absolute;
+      left: 0;
+      background-color: $pseudo;
+      border-radius: 0 5px 5px 0;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (min-width: 1120px) {
+      flex-grow: 1;
+      padding-top: 0;       
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    overflow: auto;
+
+    @media (min-width: 767px) {
+      margin:32px 24px;
+
+      &::after{
+        top: 95px;
+        width: 50px;
+      }
+
+      &::before {
+        top: 95px;
+        width: 45px;
+      }
+    }
+
+    @media (min-width: 1120px) {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;   
+        
+        &::after, &::before {
+            content: '';
+            display: none;        
+        }
+    }
+  }
+
+  &__tab-link {
+    font-weight: 500;
+    line-height: 36px;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    color: rgba(126, 126, 130, 1);
+    display: inline-block;
+    min-height: 40px;
+    white-space: nowrap;
+    padding: 0 16px;
+    border: #f8f8f8 2px solid;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: $regular;
+
+    &:focus, :hover {
+      background-color: $white;
+      border: rgba(184, 255, 236, 1) 2px solid;
+      border-radius: 6px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+
+    @media (min-width: 767px) {
+      margin:32px 24px;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 1120px) {
+      margin: 7px 25px 0 25px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    margin: 24px 16px 0 16px; 
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    overflow: hidden;
+    max-height: 90px; 
+    font-family: $medium;
+
+    @media (min-width: 767px)  {
+      margin: 0;
+      max-height: 160px; 
+        
+      &:nth-child(1) {
+        margin-bottom: 31px;
+      }
+    }
+  }
+
+  &__read-more{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    background-color: $body;
+    background:#f8f8f8 url("/public/favicon/icon.svg") no-repeat 0 50%; 
+    margin: 16px 0;
+    border: none;
+
+    &::before {
+      content: '';
+      margin-right: 26px; 
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    width: 100%;
+
+    @media (min-width: 767px) {
+      max-width: 46.875%;
+    }
+
+    @media (min-width: 1120px) {
+      max-width: 50%; 
+    }
+  }
+
+  &__repair, &__checkstatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    align-self: flex-start;
+   
+    @media (max-width: 1119px) {
+      display: none;
+    }
+
+    @media (min-width: 1120px) {
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+      margin-right: 32px;
+      border: none; 
+    }
+  } 
+
+  .button-text {
+    font-family: $medium;  
+  }
+
+  .menu-divider  {
+    display: none;
+  }
+
+  .main__content-read {
+    @media (min-width: 767px)  {
+      max-width: 43.6%; 
+    }
+
+    @media (min-width: 1120px) {
+      max-width: 46%; 
+    }
+  }
+
+  button {
+    background-color: $white;
+    transition: 0.2s ease 0.1s;
+    border: none;
+    
+    &:hover {
+      filter: grayscale(100%) opacity(70%);
+      transition-delay: 0s;
+    }
+
+    @media (min-width: 1120px) {
+      background-color: $body;
+    }
+  }
+}

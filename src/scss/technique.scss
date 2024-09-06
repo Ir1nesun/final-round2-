@@ -1,0 +1,146 @@
+@import "../scss/variables";
+
+.technique {
+    background-color: $body;
+    padding: 10px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+
+    @media (min-width: 1120px) {
+        padding-top: 60px;
+        margin-left: 300px;
+    }
+
+    &__header {
+        @media (min-width: 768px) {
+            display: block;
+            background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            border-top: 2px solid #d9fff5;
+        }
+
+        @media (min-width: 1120px) {
+            padding-left: 32px;
+            margin-left: -35px;
+          }
+    }
+
+    &__title {
+        @media (min-width: 768px) {
+            display: flex;
+            width: 338px;
+            height: 24px;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            color: $titlegrey;
+            margin: 20px;
+            font-weight: 300;
+            font-family: $medium;
+        }
+    }
+
+    &__menu {
+        display: grid;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        @media (min-width: 768px) and (max-width: 1119px) {
+            grid-template-columns: repeat(3, 1fr); 
+          }
+      
+        @media (min-width: 1120px) {
+            grid-template-columns: repeat(4, 1fr);    
+          }
+    }
+
+    &__block {
+        width: 170px;   
+        height: 100px;  
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;  
+        background-color: $white;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus,
+        &:hover {
+            background-color: $buttongrey;
+            transform: translateY(-5px);
+            border: 1px solid #EAEAEA;
+            border-radius: 6px;
+            box-shadow: 0px -5px 10px 0px rgba(185, 184, 184, 0.5);
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        color: $burgercolor;
+        margin-bottom: 8px;
+        text-align: left; 
+        align-self: flex-start;
+        font-family: $regular;
+    }
+
+    &__img {
+        align-self: flex-end ;  
+        background-color: $white;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    &__button .button_more {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(27, 28, 33, 1);
+        background-color: rgba(248, 248, 248, 1);
+        border: none;
+        margin-top: 24px;
+        margin-left: 24px;
+        gap: 8px;
+        font-family: $medium;
+        padding-left: 30px;
+        cursor: pointer;
+        text-decoration: none;
+        background: #f8f8f8 url('/public/favicon/brands/expand.svg') no-repeat 0 50%;
+
+        &:hover {
+            filter: grayscale(100%) opacity(70%);
+            transform: translateX(4px) scale(1.1);
+        }
+
+        &.up {
+            background: #f8f8f8 url('/public/favicon/brands/expand2.svg') no-repeat 0 50%;
+        }
+    }
+
+    .plan {
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        @media (min-width: 1120px) {
+            display: flex;
+         }
+    }
+
+    .hidden {
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+}
